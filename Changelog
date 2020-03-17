@@ -13,3 +13,7 @@ Major Change.Minor Change.Bug Fix
   Added Replicate button and Replicate function that increases amount of quarks
   Added Info, You are a quark in an infinite universe
   Added replicate button and styled it black and gray
+  Added ResourceViewer on the right of the screen
+  Displays resources like quarks
+  Made Replicate Button add to quarks and made it refresh the screen
+  Added the screen refresh function
