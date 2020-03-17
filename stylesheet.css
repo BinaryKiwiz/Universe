@@ -1,13 +1,14 @@
 .Body{
   background: rgb(0, 0, 0);
   font-family: "Noto Sans";
+  color: rgb(255, 255, 255);
 }
 
 .Title{
   position: absolute;
   font-size: 20px;
   left: 50%;
-  top: 3%;
+  top: 1%;
   color: rgb(255, 255, 255);
 }
 
@@ -19,7 +20,7 @@
   color: rgb(255, 255, 255);
   font-size: 13px;
   left: 2%;
-  top: 5%;
+  top: 3%;
 }
 
 .DuplicateDiv{
@@ -37,5 +38,24 @@
   padding-bottom: 3px;
   position: absolute;
   left: 1.7%;
-  top: 22%;
+  top: 8%;
+}
+
+.ResourceViewer{
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  border: 3px solid rgb(25, 25, 25);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.Quarks{
+  font-size: 13px;
+}
+
+.QuarkCount{
+  font-size: 13px;
 }
