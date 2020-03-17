@@ -6,4 +6,10 @@ Major Change.Minor Change.Bug Fix
   It doesnt work on browser
   AHHHHHHHHHHHHHHHHHHHHHHHHHH
 1.0.0, 3/16/2020:
-  Restarting all code except for skeleton.
+  Restarting all code
+  Made Title
+  Made Background Black and Title White
+  Centered Title so it is in the same place on the screen on all screen resolutions with % and absolute positioning
+  Added Replicate button and Replicate function that increases amount of quarks
+  Added Info, You are a quark in an infinite universe
+  Added replicate button and styled it black and gray
