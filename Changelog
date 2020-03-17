@@ -17,3 +17,8 @@ Major Change.Minor Change.Bug Fix
   Displays resources like quarks
   Made Replicate Button add to quarks and made it refresh the screen
   Added the screen refresh function
+  Added Gluons
+  Made the replicate button have a 1/5 chance to make a gluon
+  Added Protons
+  Added Neutrons
+  Updated save and loadsave functions to include new variables
