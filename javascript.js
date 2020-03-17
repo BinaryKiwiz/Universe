@@ -4,6 +4,14 @@ Quarks = 1;
 ReplicationIncrease = 1;
 
 console.log("Loading Functions");
+function RefreshScreen(){
+  document.getElementById("Quarks").innerHTML = Quarks;
+}
+
 function Replicate(){
   Quarks += ReplicationIncrease;
+  RefreshScreen();
 }
+
+console.log("Loading Game Elements");
+RefreshScreen();
