@@ -42,14 +42,16 @@
 }
 
 .ResourceViewer{
+  font-size: 13px;
   position: absolute;
-  right: 5%;
-  top: 5%;
+  right: 1%;
+  top: 9%;
   border: 3px solid rgb(25, 25, 25);
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
+  border-radius: 5px;
 }
 
 .Quarks{
@@ -58,4 +60,22 @@
 
 .QuarkCount{
   font-size: 13px;
+}
+
+.SaveDiv{
+  
+}
+
+.SaveButton{
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+  border: 3px solid rgb(25, 25, 25);
+  border-radius: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  position: absolute;
+  top: 1%;
+  right: 1%;
 }
