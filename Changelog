@@ -5,6 +5,7 @@ Major Change.Minor Change.Bug Fix
   Spent like 3 hours learning how to make drop down menus and made everything resize to fit the screen resolution
   It doesnt work on browser
   AHHHHHHHHHHHHHHHHHHHHHHHHHH
+  
 1.0.0, 3/16/2020:
   Restarting all code
   Made Title
@@ -22,3 +23,15 @@ Major Change.Minor Change.Bug Fix
   Added Protons
   Added Neutrons
   Updated save and loadsave functions to include new variables
+
+1.1.0, 3/18/2020:
+  Added generate Electron Button
+  Added Fuse Neutron Button
+  Added Fuse Proton Button
+  Added Fuse Hydrogen Button
+  Added new resources to resource manager
+  Made new variables for new resources
+  Added functions for all new resources
+  Updated Save and LoadSave functions to include all new variables
+  Added tooltips for all buttons
+  Some buttons don't do anything yet
