@@ -41,6 +41,19 @@
   top: 8%;
 }
 
+.DuplicateButton:hover{
+  
+}
+
+.DuplicateButton[aria-label]:hover:after{
+  content: attr(aria-label);
+  padding: 0px 0px;
+  position: absolute;
+  left: 90%;
+  top: 12%;
+  width: 200px;
+}
+
 .ResourceViewer{
   font-size: 13px;
   position: absolute;
@@ -78,4 +91,157 @@
   position: absolute;
   top: 1%;
   right: 1%;
+}
+
+.NeutronDiv{
+  
+}
+
+.NeutronButton{
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+  border: 3px solid rgb(25, 25, 25);
+  border-radius: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  position: absolute;
+  top: 18%;
+  left: 1.7%;
+}
+
+.ProtonDiv{
+  
+}
+
+.ProtonButton{
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+  border: 3px solid rgb(25, 25, 25);
+  border-radius: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  position: absolute;
+  top: 23%;
+  left: 1.7%;
+}
+
+.HydrogenDiv{
+  
+}
+
+.HydrogenButton{
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+  border: 3px solid rgb(25, 25, 25);
+  border-radius: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  position: absolute;
+  top: 28%;
+  left: 1.7%;
+}
+
+.HydrogenCount{
+  
+}
+
+.Hydrogen{
+  
+}
+
+.ElectronCount{
+  
+}
+
+.Electrons{
+  
+}
+
+.ElectronDiv{
+  
+}
+
+.ElectronButton{
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+  border: 3px solid rgb(25, 25, 25);
+  border-radius: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  position: absolute;
+  top: 13%;
+  left: 1.7%;
+}
+
+.SaveButton:hover{
+  
+}
+
+.SaveButton[aria-label]:hover:after{
+  content: attr(aria-label);
+  padding: 0px 0px;
+  position: absolute;
+  left: 90%;
+  top: 12%;
+  width: 200px;
+}
+
+.NeutronButton:hover{
+  
+}
+
+.NeutronButton[aria-label]:hover:after{
+  content: attr(aria-label);
+  padding: 0px 0px;
+  position: absolute;
+  left: 90%;
+  top: 12%;
+  width: 300px;
+}
+
+.ProtonButton:hover{
+  
+}
+
+.ProtonButton[aria-label]:hover:after{
+  content: attr(aria-label);
+  padding: 0px 0px;
+  position: absolute;
+  left: 90%;
+  top: 12%;
+  width: 300px;
+}
+
+.ElectronButton:hover{
+  
+}
+
+.ElectronButton[aria-label]:hover:after{
+  content: attr(aria-label);
+  padding: 0px 0px;
+  position: absolute;
+  left: 80%;
+  top: 12%;
+  width: 200px;
+}
+
+.HydrogenButton:hover{
+  
+}
+
+.HydrogenButton[aria-label]:hover:after{
+  content: attr(aria-label);
+  padding: 0px 0px;
+  position: absolute;
+  left: 100%;
+  top: 12%;
+  width: 350px;
 }
