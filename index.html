@@ -16,7 +16,7 @@
       </span>
     </div>
     <div class = "DuplicateDiv" id = "DuplicateDiv">
-      <button class = "DuplicateButton" id = "DuplicateButton" onclick = "Replicate()">
+      <button class = "DuplicateButton" id = "DuplicateButton" onclick = "Replicate()" aria-label = "Replicate into more Quarks">
       Replicate
       </button>
     </div>
@@ -30,7 +30,7 @@
       <div class = "GluonCount" id = "GluonCount">
         Gluons:
         <span class = "Gluons" id = "Gluons">
-          0
+            0
         </span>
       </div>
       <div class = "NeutronCount" id = "NeutronCount">
@@ -45,10 +45,42 @@
           0
         </span>
       </div>
+      <div class = "ElectronCount" id = "ElectronCount">
+        Electrons:
+        <span class = "Electrons" id = "Electrons">
+          0
+        </span>
+      </div>
+      <div class = "HydrogenCount" id = "HydrogenCount">
+        Hydrogen:
+        <span class = "Hydrogen" id = "Hydrogen">
+          0
+        </span>
+      </div>
     </div>
     <div class = "SaveDiv" id = "SaveDiv">
-      <button class = "SaveButton" id = "SaveButton" onclick = "Save()">
+      <button class = "SaveButton" id = "SaveButton" onclick = "Save()" aria-label = "Save your game">
         Save
+      </button>
+    </div>
+    <div class = "NeutronDiv" id = "NeutronDiv">
+      <button class = "NeutronButton" id = "NeutronButton" onclick = "FuseNeutron()" aria-label = "Fuse 3 Quarks and 3 Gluons into a Neutron">
+        Fuse Neutron
+      </button>
+    </div>
+    <div class = "ProtonDiv" id = "ProtonDiv">
+      <button class = "ProtonButton" id = "ProtonButton" onclick = "FuseProton()" aria-label = "Fuse 3 Quarks and 3 Gluons into a Proton">
+        Fuse Proton
+      </button>
+    </div>
+    <div class = "ElectronDiv" id = "ElectronDiv">
+      <button class = "ElectronButton" id = "ElectronButton" onclick = "GenElectron" aria-label = "Generate an Electron">
+        Generate Electron
+      </button>
+    </div>      
+    <div class = "HydrogenDiv" id = "HydrogenDiv">
+      <button class = "HydrogenButton" id = "HydrogenButton" onclick = "FuseHydrogen()" aria-label = "Fuse 1 Proton, 1 Electron, and 1 Neutron into Hydrogen">
+        Fuse Hydrogen
       </button>
     </div>
   </body>
