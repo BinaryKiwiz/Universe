@@ -35,3 +35,11 @@ Major Change.Minor Change.Bug Fix
   Updated Save and LoadSave functions to include all new variables
   Added tooltips for all buttons
   Some buttons don't do anything yet
+  
+1.2.0, 3/19/2020:
+  Added Buy replicator Button
+  Added Buy Generator Button
+  Created New Fucntions for New Buttons
+  Created New Variables for new Buttons
+  Updated Save and LoadSave functions to include new variables
+  Added tooltips to new buttons
