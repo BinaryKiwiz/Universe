@@ -18,6 +18,11 @@ var Hydrogen = 0;
 var HydrogenPerFusion = 1;
 var Electrons = 0;
 var ElectronsPerGen = 1;
+var ReplicatorHydrogenCost = 5;
+var TickSpeed = 1000;
+var Replicators = 0;
+var Generators = 0;
+var GeneratorHydrogenCost = 10;
 
 console.log("Loading RefreshScreen()");
 function RefreshScreen(){
@@ -27,6 +32,9 @@ function RefreshScreen(){
   document.getElementById("Gluons").innerHTML = Gluons;
   document.getElementById("Info").innerHTML = Info;
   document.getElementById("Hydrogen").innerHTML = Hydrogen;
+  document.getElementById("Electrons").innerHTML = Electrons;
+  document.getElementById("ReplicatorButton").setAttribute("aria-label", "Buy a Replicator to automatically replicate for " + ReplicatorHydrogenCost + " Hydrogen");
+  document.getElementById("GeneratorButton").setAttribute("aria-label", "Buy a Generator to automatically Generate Electrons for " + GeneratorHydrogenCost + " Hydrogen");
 }
 
 console.log("Loading Replicate()");
@@ -48,7 +56,8 @@ function Save(){
   localStorage.setItem("Hydrogen", Hydrogen);
   localStorage.setItem("ElectronsPerGen", ElectronsPerGen);
   localStorage.setItem("ReplicationIncrease", ReplicationIncrease);
-  localStorage.setItem("GluonIncrease", GluonChance);
+  localStorage.setItem("GluonChance", GluonChance);
+  localStorage.setItem("GluonIncrease", GluonIncrease);
   localStorage.setItem("NeutronQuarkCost", NeutronQuarkCost);
   localStorage.setItem("NeutronGluonCost", NeutronGluonCost);
   localStorage.setItem("ProtonQuarkCost", ProtonQuarkCost);
@@ -57,6 +66,11 @@ function Save(){
   localStorage.setItem("ProtonsPerFusion", ProtonsPerFusion);
   localStorage.setItem("HydrogenPerFusion", HydrogenPerFusion);
   localStorage.setItem("Info", Info);
+  localStorage.setItem("ReplicatorHydrogenCost", ReplicatorHydrogenCost);
+  localStorage.setItem("TickSpeed", TickSpeed);
+  localStorage.setItem("Replicators", Replicators);
+  localStorage.setItem("Generators", Replicators);
+  localStorage.setItem("GeneratorHydrogenCost", Replicators);
 }
 
 console.log("Loading LoadSave()");
@@ -112,6 +126,21 @@ function LoadSave(){
   if(localStorage.getItem("ElectronsPerGen") != null){
     ElectronsPerGen = parseInt(localStorage.getItem("ElectronsPerGen"));
   }
+  if(localStorage.getItem("ReplicatorHydrogenCost") != null){
+    ReplicatorHydrogenCost = parseInt(localStorage.getItem("ReplicatorHydrogenCost"));
+  }
+  if(localStorage.getItem("TickSpeed") != null){
+    TickSpeed = parseInt(localStorage.getItem("TickSpeed"));
+  }
+  if(localStorage.getItem("Replicators") != null){
+    Replicators = parseInt(localStorage.getItem("Replicators"));
+  }
+  if(localStorage.getItem("Generators") != null){
+    Generators = parseInt(localStorage.getItem("Generators"));
+  }
+  if(localStorage.getItem("GeneratorHydrogenCost") != null){
+    GeneratorHydrogenCost = parseInt(localStorage.getItem("GeneratorHydrogenCost"));
+  }
 }
 
 console.log("Loading FuseNeutron()")
@@ -121,10 +150,10 @@ function FuseNeutron(){
     Gluons -= NeutronGluonCost;
     Neutrons += NeutronsPerFusion;
     if(NeutronsPerFusion <= 1){
-      Info = "You fused " + String(NeutronQuarkCost) + " Quarks and " + String(NeutronGluonCost) + " Gluons into a Proton";
+      Info = "You fused " + String(NeutronQuarkCost) + " Quarks and " + String(NeutronGluonCost) + " Gluons into a Neutron";
     }
-    if(ProtonsPerFusion >= 1){
-      Info = "You fused " + String(NeutronQuarkCost) + " Quarks and " + String(NeutronGluonCost) + " Gluons into " + String(NeutronsPerFusion) + " Proton";
+    if(NeutronsPerFusion >> 1){
+      Info = "You fused " + String(NeutronQuarkCost) + " Quarks and " + String(NeutronGluonCost) + " Gluons into " + String(NeutronsPerFusion) + " Neutrons";
     }
   }
   else{
@@ -142,8 +171,8 @@ function FuseProton(){
     if(ProtonsPerFusion <= 1){
       Info = "You fused " + String(ProtonQuarkCost) + " Quarks and " + String(ProtonGluonCost) + " Gluons into a Proton";
     }
-    if(ProtonsPerFusion >= 1){
-      Info = "You fused " + String(ProtonQuarkCost) + " Quarks and " + String(ProtonGluonCost) + " Gluons into " + String(ProtonsPerFusion) + " Proton";
+    if(ProtonsPerFusion >> 1){
+      Info = "You fused " + String(ProtonQuarkCost) + " Quarks and " + String(ProtonGluonCost) + " Gluons into " + String(ProtonsPerFusion) + " Protons";
     }
   }
   else{
@@ -171,6 +200,51 @@ function GenElectron(){
   RefreshScreen();
 }
 
+function ReplicatorReplicate(){
+  Quarks += ReplicationIncrease * Replicators;
+  if(Math.floor((Math.random() * GluonChance) + 1) == 1){
+    Gluons += GluonIncrease * Replicators;
+  }
+  RefreshScreen();
+}
+
+function BuyReplicator(){
+  if(Hydrogen >= ReplicatorHydrogenCost){
+    Replicators += 1;
+    Hydrogen -= ReplicatorHydrogenCost;
+    ReplicatorHydrogenCost = Math.round(ReplicatorHydrogenCost * 1.2);
+  }
+}
+
+function AddCycle(){
+  if(Replicators >= 1){
+    ReplicatorReplicate();
+  }
+  setTimeout("AddCycle()", TickSpeed);
+}
+
 console.log("Loading Game Elements");
 LoadSave();
 RefreshScreen();
+AddCycle()
+
+console.log("Debugging Variables");
+console.log("Info: " + Info);
+console.log("Quarks: " + Quarks);
+console.log("Protons: " + Protons);
+console.log("Neutrons: " + Neutrons);
+console.log("Electrons: " + Electrons);
+console.log("Gluons: " + Gluons);
+console.log("ReplicationIncrease: " + ReplicationIncrease);
+console.log("GluonIncrease: " + GluonIncrease);
+console.log("GluonChance: " + GluonChance);
+console.log("NeutronQuarkCost: " + NeutronQuarkCost);
+console.log("NeutronGluonCost: " + NeutronGluonCost);
+console.log("ProtonQuarkCost: " + ProtonQuarkCost);
+console.log("ProtonGluonCost: " + ProtonGluonCost);
+console.log("NeutronsPerFusion: " + NeutronsPerFusion);
+console.log("ProtonsPerFusion: " + ProtonsPerFusion);
+console.log("Hydrogen: " + Hydrogen);
+console.log("HydrogenPerFusion: "  + HydrogenPerFusion);
+console.log("Electrons: " + Electrons);
+console.log("ElectronsPerGen: " + ElectronsPerGen);
